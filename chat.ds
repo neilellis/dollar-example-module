@@ -1,6 +1,6 @@
+>> $channel
 redis := redis://localhost:6379/$channel
 http:get://127.0.0.1:8111/$channel subscribe {
     $1.params send $redis
     { body : receive all $redis }
 }
->> $channel
