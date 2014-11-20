@@ -1,9 +1,9 @@
 {
     server: { 
-        redis := uri ("redis://localhost:6379/" + $channel)
-        uri ("http:get://127.0.0.1:8111/" + $channel) subscribe {
-            $1.params send $redis
-            { body : receive all $redis }
+        redis := ("redis://localhost:6379/" + channel) as URI
+          (("http:get://127.0.0.1:8111/" + channel) as URI) subscribe {
+            $1.params +> redis
+            { body :  all redis }
         }
     }
 }
