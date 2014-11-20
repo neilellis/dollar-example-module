@@ -1,4 +1,4 @@
 dollar-example-module
 =====================
 
-An example of using a module within Dollar
+An example of using a module within DollarScript
