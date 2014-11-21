@@ -5,6 +5,5 @@
             $1.params +> redis
             { body :  all redis }
         }
-        "Hello World"
     }
 }
