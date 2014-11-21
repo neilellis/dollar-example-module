@@ -1,5 +1,5 @@
-redis = ("redis://localhost:6379/" + channel) as URI
-www = (("http:get://127.0.0.1:8111/" + channel) as URI)
+redis := ("redis://localhost:6379/" + channel) as URI
+www := (("http:get://127.0.0.1:8111/" + channel) as URI)
 
 export server := { 
            www subscribe {
