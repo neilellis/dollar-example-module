@@ -8,11 +8,11 @@ www := (("http:get://127.0.0.1:8111/" + channel) as URI)
         }
     }
     "stop" : {
-        stop www
-        stop redis
+        stop(www)
+        stop(redis)
     }
      "state" : [
-        state www,
-        stop redis
+        state(www),
+        state(redis)
     ]
 }
