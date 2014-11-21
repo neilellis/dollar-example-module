@@ -6,11 +6,11 @@ www := (("http:get://127.0.0.1:8111/" + channel) as URI)
             $1.params +> redis
             { body :  all redis }
         }
-    }
+    },
     "stop" : {
         stop(www)
         stop(redis)
-    }
+    },
      "state" : [
         state(www),
         state(redis)
