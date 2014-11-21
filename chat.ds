@@ -1,9 +1,14 @@
+redis := ("redis://localhost:6379/" + channel) as URI
+www := (("http:get://127.0.0.1:8111/" + channel) as URI)
 {
     "server": { 
-        redis := ("redis://localhost:6379/" + channel) as URI
-          (("http:get://127.0.0.1:8111/" + channel) as URI) subscribe {
+           www subscribe {
             $1.params +> redis
             { body :  all redis }
         }
+    }
+    "stop" : {
+        stop www
+        stop redis
     }
 }
