@@ -8,7 +8,7 @@ export server := {
         }
     };
     
-export stop := {stop(www);stop(redis); @@ [state(www),state(redis)]}
+export stop := {STOP(www);STOP(redis); @@ [STATE(www),STATE(redis)]}
     
-export state:= [state(www),state(redis)]
+export state:= [STATE(www),STATE(redis)]
 
