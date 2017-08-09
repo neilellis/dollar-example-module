@@ -2,10 +2,10 @@ const redis= ("redis://localhost:6379/" + channel) as URI
 const www= (("http:get://127.0.0.1:8111/" + channel) as URI)
 
 export const server := { 
-           www subscribe {
+           fix(www subscribe {
             $1.params >> redis
             { body :  all redis }
-        }
+        })
     };
     
 export const stop := {STOP(www);STOP(redis); @@ [STATE(www),STATE(redis)]}
