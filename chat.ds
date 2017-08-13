@@ -8,7 +8,7 @@ export const server := {
         })
     };
     
-export const stop := {STOP(www);STOP(redis); @@ [STATE(www),STATE(redis)]}
+export const stop_ := {STOP(www);STOP(redis); @@ [STATE(www),STATE(redis)]}
     
-export const state:= [STATE(www),STATE(redis)]
+export const state_ := [STATE(www),STATE(redis)]
 
